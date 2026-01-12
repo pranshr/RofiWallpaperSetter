@@ -2,22 +2,25 @@
 
 
 
-dir=~/desktop-bg
-# wallpapers=$(find $dir -mindepth 1 -printf "%P|" | awk '{print substr($0, 1, length($0)-1)}')
+dir=""  # your dir here...
 
 declare -A images
 
 options=""
-for file in in "$dir"/*; do
+for file in "$dir"/*; do
 
     images[" \0icon\x1f$file"]="$file"
 
     if [ -z "$options" ]; then
         options="$file\0icon\x1f$file"
     else
-        options="$options|$file\0icon\x1f$file"
+        options="$options|$file\0icon\x1fthumbnail://$file"
     fi
 done
 
-selection=$(echo -e $options | rofi -dmenu -sep '|' -show-icons)
+selection=$(echo -en $options | rofi \
+                                -dmenu \
+                                -sep '|' \
+                                -show-icons \
+                                -cycle)
 wallset "$selection"
