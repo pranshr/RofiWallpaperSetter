@@ -4,22 +4,7 @@ configuration {
 }
 
 
-@import                          "~/.config/rofi/colors/colors.rasi"
-
-
-/* ---------------------- Global Properties ------------------------ */
-* {
-    font:                        "JetBrainsMono Nerd Font Propo 17.5";
-    font-small:                  "Stack Sans Headline Semi-Bold 10.44";
-    color-background:            @widget-background; // #090f11; surface_container_lowest
-    color-background-alt:        @widget-background-alt; // #171d1e; surface_container_low
-    color-background-inverse:    @widget-background-inverse; // #84d2e5; surface_tint
-    color-text:                  @widget-background-inverse; // #84d2e5; -
-    color-text-alt:              @widget-text-alt; // #006879; inverse_primary
-    color-text-inverse:          @widget-background-alt; // #171d1e; -
-
-
-}
+@import                          "var.rasi"
 
 
 
@@ -57,7 +42,7 @@ mainbox {
 message {
     enabled:                     true;
     background-color:            transparent;
-    margin:                      10px 10px 0 10px;
+    margin:                      15px 10px -8px 10px;
     padding:                     0px;
     children:                    [ "textbox" ];
 }
@@ -79,7 +64,7 @@ listview {
     scrollbar:                   false;
     layout:                      horizontal;
     lines:                       5;
-    margin:                      10px 18px;
+    margin:                      18px;
     spacing:                     10px;
     background-color:            transparent;
     cursor:                      "default";
@@ -96,10 +81,11 @@ element {
 element-icon {
     size:                        130px;
     background-color:            transparent;
+    // vertical-align:              0.8;
 }
 
 
 element selected.normal {
-    border:                       0 0 2px 0 solid;
-    border-color:                white;
+    border:                      0 0 3px 0 solid;
+    border-color:                @color-background-inverse;
 }

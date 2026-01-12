@@ -5,8 +5,7 @@
 theme=style.rasi
 
 # Variables
-dir=~/desktop-bg
-msg="Wallpaper  /    Wallset"
+source ./var.sh
 declare -A images
 
 

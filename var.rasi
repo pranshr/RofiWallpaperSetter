@@ -1,0 +1,14 @@
+
+/* ---------------------- Global Properties ------------------------ */
+* {
+    font:                        "JetBrainsMono Nerd Font Propo 17.5";
+    font-small:                  "Stack Sans Headline Semi-Bold 10.44";
+    color-background:            #090f11;
+    color-background-alt:        #171d1e;
+    color-background-inverse:    #84d2e5;
+    color-text:                  #84d2e5;
+    color-text-alt:              #006879;
+    color-text-inverse:          #171d1e;
+
+
+}
