@@ -1,8 +1,12 @@
 #!/bin/bash
 
 
+# Theme
+theme=style.rasi
+
 # Variables
 dir=~/desktop-bg
+msg="Wallpaper  /    Wallset"
 declare -A images
 
 
@@ -24,6 +28,6 @@ done
 selection=$(echo -en $options | rofi \
                                 -dmenu \
                                 -sep '|' \
-                                -show-icons \
-                                -cycle)
+                                -theme $theme \
+                                -mesg "$msg")
 wallset "$selection"

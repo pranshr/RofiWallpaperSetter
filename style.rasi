@@ -1,0 +1,105 @@
+configuration {
+    show-icons: true;
+    cycle:  true;
+}
+
+
+@import                          "~/.config/rofi/colors/colors.rasi"
+
+
+/* ---------------------- Global Properties ------------------------ */
+* {
+    font:                        "JetBrainsMono Nerd Font Propo 17.5";
+    font-small:                  "Stack Sans Headline Semi-Bold 10.44";
+    color-background:            @widget-background; // #090f11; surface_container_lowest
+    color-background-alt:        @widget-background-alt; // #171d1e; surface_container_low
+    color-background-inverse:    @widget-background-inverse; // #84d2e5; surface_tint
+    color-text:                  @widget-background-inverse; // #84d2e5; -
+    color-text-alt:              @widget-text-alt; // #006879; inverse_primary
+    color-text-inverse:          @widget-background-alt; // #171d1e; -
+
+
+}
+
+
+
+
+/* ------------------------- Main Window --------------------------- */
+window {
+    transparency:                "real";
+    location:                    south;
+    anchor:                      south;
+    fullscreen:                  false;
+    x-offset:                    0px;
+    y-offset:                    -18px;
+    margin:                      0px;
+    border-radius:               9px;
+    cursor:                      "default";
+    background-color:            @color-background;
+    width:                       calc( 5 * 130px + 4 * 10px + 2 * 18px + 1px);
+}
+
+
+
+/* -------------------------- Main Box ----------------------------- */
+mainbox {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    // padding:                     10px;
+    background-color:            transparent;
+    children:                    [ "message", "listview" ];
+}
+
+
+
+/* --------------------------- Message ----------------------------- */
+message {
+    enabled:                     true;
+    background-color:            transparent;
+    margin:                      10px 10px 0 10px;
+    padding:                     0px;
+    children:                    [ "textbox" ];
+}
+
+textbox {
+    font:                        @font-small;
+    background-color:            inherit;
+    text-color:                  @color-text-alt;
+    vertical-align:              0.5;
+    horizontal-align:            0.03;
+}
+
+
+
+/* ------------------------- List --------------------------- */
+listview {
+    enabled:                     true;
+    cycle:                       true;
+    scrollbar:                   false;
+    layout:                      horizontal;
+    lines:                       5;
+    margin:                      10px 18px;
+    spacing:                     10px;
+    background-color:            transparent;
+    cursor:                      "default";
+}
+
+element {
+    enabled:                     true;
+    border:                      0px solid;
+    cursor:                      pointer;
+    background-color:            transparent;
+    children:                    [ element-icon ];
+}
+
+element-icon {
+    size:                        130px;
+    background-color:            transparent;
+}
+
+
+element selected.normal {
+    border:                       0 0 2px 0 solid;
+    border-color:                white;
+}
