@@ -1,11 +1,12 @@
 #!/bin/bash
 
 
-
-dir=""  # your dir here...
-
+# Variables
+dir=~/desktop-bg
 declare -A images
 
+
+# Building the options
 options=""
 for file in "$dir"/*; do
 
@@ -18,6 +19,8 @@ for file in "$dir"/*; do
     fi
 done
 
+
+# Running Rofi and getting wallpaper, then executing the command for changing the wallpaper
 selection=$(echo -en $options | rofi \
                                 -dmenu \
                                 -sep '|' \
